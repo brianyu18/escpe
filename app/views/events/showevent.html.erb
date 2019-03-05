@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="canonical" href="https://www.primative.net/">
+    <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="Primative – Web development">
+
+    <title>Fabien Lasserre - Full Stack Web Developer</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:400,700|Ubuntu+Mono:400,700" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://www.primative.net/css/main.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="/favicon-256x256.png" sizes="256x256" />
+    <link rel="icon" type="image/png" href="/favicon-128x128.png" sizes="128x128" />
+    <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+</head>
+<body id="body">
+    <main class="site" id="top" style="background-color:#ff4f4f">
+      <div class="dropdown is-right is-pulled-right"style="margin-top:15px; margin-right:20px">
+        <script>var dropdown = document.querySelector('.dropdown');
+      dropdown.addEventListener('click', function(event) {
+        event.stopPropagation();
+        dropdown.classList.toggle('is-active');
+      });</script>
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+            <span>See who's attending</span>
+            <span class="icon is-small">
+              <i class="fas fa-heart" style="color:#ff4f4f" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+          <div class="dropdown-content">
+            <% @event.users.each do |user| %>
+            <div class="dropdown-item">
+              <p>user.name</p>
+            </div>
+            <% end %>
+
+            <hr class="dropdown-divider">
+            <div class="dropdown-item">
+              <p>You simply need to use a <code>&lt;div&gt;</code> instead.</p>
+            </div>
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item">
+              This is a link
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+<div class="column is-half nav-home">
+
+    <nav class="navbar" aria-label="main navigation">
+        <div class="navbar-brand is">
+            <button class="button navbar-burger" style="margin-top:8px;margin-right:460px" data-target="navMenu">
+                <span style="background-color:#ffffff"></span>
+                <span style="background-color:#ffffff"></span>
+                <span style="background-color:#ffffff"></span>
+            </button>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+
+                <a class="navbar-item" href="redirect to swipe">Find Friends</a><a class="navbar-item" href="/placeholder">Profile</a><a class="navbar-item" href="/events/">Events</a><a class="navbar-item" href="/friends/">Friends</a>
+            </div>
+        </div>
+        <div class="navbar-menu is-hidden-desktop" style="position:static; background-color: #ff4a4a" id="navMenu">
+            <span><a class="navbar-item is-active" style="position:static; background-color: #ff4a4a" href="users/index">Find Friends</a></span>
+            <span><a class="navbar-item is-active" style="position:static; background-color: #ff4a4a" href="users/about/">Profile</a></span>
+            <span><a class="navbar-item is-active" style="position:static; background-color: #ff4a4a" href="user_events_path">Events</a></span>
+            <span><a class="navbar-item is-active" style="position:static; background-color: #ff4a4a" href="users/users/index/">Friends</a></span>
+
+
+        </div>
+    </nav>
+</div>
+
+
+<div class="home-columns columns"style="font-color:#636363">
+
+    <div class="column is-half is-home-left-column" style="background-image:url(https://cdn2-www.dogtime.com/assets/uploads/2009/07/teach-dog-walk-leash.jpg); background-size: cover; background-repeat:no-repeat; background-position:center">
+    </div>
+
+    <div class="column is-half is-home-right-column" style="position:static; color:#6d6c6c; background-color: #ffffff">
+
+
+<p><img src="https://media.timeout.com/images/102848865/630/472/image.jpg", alt="Event Image" /></p>
+
+<h1 id="event"><%= "#{@event.name.upcase}" %></h1>
+<br>
+<h4 id="location"><%= "Location: #{@event.location.upcase}" %></h4>
+
+
+<p>Event stuff here put it here you idiot do it now.
+
+Event stuff here put it here you idiot do it now.
+
+Event stuff here put it here you idiot do it now.
+
+Event stuff here put it here you idiot do it now. <a href="even_url">See the event!</a>!</p>
+<br>
+
+  <div class="field is-grouped">
+    <p class="control">
+      <a href="/" class="button is-large is-fullwidth is-danger is-outlined is-hovered" style="text-decoration:none" method="POST">
+      <i class="fas fa-times"></i>
+      NOPE
+      </a>
+    </p>
+
+    <p class="control">
+      <a href="/" class="button is-large is-fullwidth is-success is-outlined is-hovered" style="text-decoration:none" method="POST">
+<i class="fas fa-check"></i>
+        YAAS
+      </a>
+    </p>
+  </div>
+
+        <!--<div class="social">
+            <ul>
+                <li><a href="https://twitter.com/fbnlsr"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="mailto:hello@primative.net"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </div>-->
+    </div>
+
+</div>
+
+</main>
+<footer class="site-footer footer"style="background-color: #ff4a4a">
+    <div class="columns">
+        <div class="column is-one-fifth">
+            <div class="columns">
+                <div class="contact column">
+
+                    <!--<p><strong>Contact</strong></p>
+                    <p><a href="tel:+33603351963">+33&nbsp;(0)6&nbsp;03&nbsp;35&nbsp;19&nbsp;63</a></p>-->
+                </div>
+
+                <div class="siret column">
+                    <!--<p><strong>SIRET</strong></p>
+                    <p>75068729500014</p>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="column column-right has-text-right is-hidden-mobile">
+        </div>
+    </div>
+</footer>
+
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script defer src='https://d33wubrfki0l68.cloudfront.net/js/d49ac21445122720d76b0cc2593956d54ecafee1/js/main.min.js'></script>
+
+</body>
+</html>

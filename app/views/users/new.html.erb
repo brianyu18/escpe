@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="../../../lib/bulma-0.7.2/css/bulma.css">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Free Bulma template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+
+<body>
+    <section class="hero is-success is-fullheight">
+      <video style="z-index:0; object-fit:cover; position:absolute; height:100%; width:100%" width="100%" height="100%" playsinline autoplay muted loop>
+        <source src="/videos/vid.mp4" type="video/mp4">
+      </video>
+        <div class="hero-body" style="z-index:1; background-color:rgba(255,255,255,0.1)"> <!--style="background-image:url(https://j.gifs.com/32kx9R.gif); background-size: 100% 100%; background-repeat:no-repeat"-->
+          <!--; background-size: 100% 100%; background-repeat:no-repeat-->
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <div class="box" style="box-shadow:none; background-color:rgba(255,255,255,0.6)">
+                      <h3 class="title has-text-dark" style="font-weight:900">FRNDR</h3>
+
+                        <!--<figure class="avatar">
+                            <img src="https://placehold.it/128x128">
+                        </figure>-->
+                        <div>
+                          <%= form_with model: @user, local: true do |f|%>
+                                <%= f.text_field :fname, autocomplete: :off, class: "input is-medium", type: "text",  autofocus: "", placeholder:"First Name" %>
+
+                                <%= f.text_field :lname, autocomplete: :off, class: "input is-medium", type: "text",  autofocus: "", placeholder:"Last Name", style:"margin-top:10px" %>
+                                <%= f.text_field :email, autocomplete: :off, class: "input is-medium", type: "email",  autofocus: "", placeholder:"Email", style:"margin-top:10px" %>
+
+                                <%= f.password_field :password, autocomplete: :off, class: "input is-medium", type: "password", placeholder:"Password", style:"margin-top:10px"%>
+                                <%= f.text_area :profile, autocomplete: :off, class: "input is-medium", type: "text",  autofocus: "", placeholder:"Tell Us About Yourself", style:"margin-top:10px; height:130px" %>
+
+                                <%= f.text_area :img_url, autocomplete: :off, class: "input is-medium", type: "text",  autofocus: "", placeholder:"Put an image link here", style:"margin-top:10px; height:130px" %>
+                                <%= f.submit "Submit", class: "button is-dark is-block is-medium is-fullwidth is-outlined", style:"margin-top:10px"%>
+
+                          <% end %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+
+</body>
+
+</html>

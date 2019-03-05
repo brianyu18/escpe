@@ -1,0 +1,55 @@
+<%= form_with(model: event, local: true) do |form| %>
+
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_url %>
+    <%= form.text_field :img_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :food %>
+    <%= form.check_box :food %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cover %>
+    <%= form.check_box :cover %>
+  </div>
+
+  <div class="field">
+    <%= form.label :booze %>
+    <%= form.check_box :booze %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, min:1, max:5 %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+
+<% end %>

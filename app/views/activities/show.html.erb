@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @activity.interest_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @activity.event_id %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @activity.food %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @activity.cover %>
+</p>
+
+<p>
+  <strong>Booze:</strong>
+  <%= @activity.booze %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @activity.price %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

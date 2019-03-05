@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="canonical" href="https://www.primative.net/">
+    <link href="/blog/index.xml" rel="alternate" type="application/rss+xml" title="Primative – Web development">
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans:400,700|Ubuntu+Mono:400,700" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://www.primative.net/css/main.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/brands.css" integrity="sha384-rf1bqOAj3+pw6NqYrtaE1/4Se2NBwkIfeYbsFdtiR6TQz0acWiwJbv1IM/Nt/ite" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="/favicon-256x256.png" sizes="256x256" />
+    <link rel="icon" type="image/png" href="/favicon-128x128.png" sizes="128x128" />
+    <link rel="icon" type="image/png" href="/favicon-64x64.png" sizes="64x64" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+</head>
+<body id="body">
+    <main class="site" id="top" style="background-color:#735a5a">
+
+
+<div class="column is-half nav-home">
+
+    <nav class="navbar" aria-label="main navigation">
+        <div class="navbar-brand is">
+            <button class="button navbar-burger" style="margin-top:8px;margin-right:460px" data-target="navMenu">
+                <span style="background-color:#ffffff"></span>
+                <span style="background-color:#ffffff"></span>
+                <span style="background-color:#ffffff"></span>
+            </button>
+
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+
+                <a class="navbar-item"><h3 class="title has-text-white" style="font-weight:900">ESCPE</h3></a>
+                <a class="navbar-item has-text-white" <%= link_to "Find Events", user_event_path(user_id:@user,event_id:1) %></a>
+                <a class="navbar-item has-text-white" <%= link_to "Events", user_events_path(@user) %></a>
+                <a class="navbar-item has-text-white" href="../../../sessions/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div class="home-columns columns"style="font-color:#636363">
+  <div class="navbar-menu is-hidden-desktop" style="position:static; background-color: #735a5a" id="navMenu">
+      <span><a class="navbar-item is-active has-text-white" style="position:static; background-color: #735a5a" href="<%= @user.id %>">Profile</a></span>
+      <span><a class="navbar-item is-active has-text-white" style="position:static; background-color: #735a5a" href=<%= user_events_path(@user)%>>Events</a></span>
+      <span><a class="navbar-item is-active has-text-white" style="position:static; background-color: #735a5a" href="../../../sessions/logout">Logout</a></span>
+
+  </div>
+
+
+    <div class="column is-half is-home-left-column" style="background-image:url(<%= "#{@user.img_url}" %>); background-size: cover; background-repeat:no-repeat; background-position:center">
+</div>
+
+    <div class="column is-half is-home-right-column" style="position:static; color:#6d6c6c; background-color: #ffffff">
+
+
+<br>
+<br>
+<br>
+
+<h1 id="Name"><%= "#{@user.fname} #{@user.lname}" %></h1>
+<hr style="background-color:#6d6c6c">
+<br>
+<!--<h4 id=""><%= "Location: #{@user.fname}" %></h4>-->
+
+<div class="column is-pulled-right is-half">
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <div class="text is-centered">
+          <strong>Profile...</strong>
+          </div>
+          <br>
+          <%=@user.profile%>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+</div>
+
+<div class="column is-pulled-right is-half">
+<div class="dropdown is-hoverable is-pulled-left is-center"style="margin-left:50px">
+  <script>var dropdown = document.querySelector('.dropdown');
+dropdown.addEventListener('click', function(event) {
+  event.stopPropagation();
+  dropdown.classList.toggle('is-active');
+});</script>
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+      <span>See the events I'm attending</span>
+      <span class="icon is-small">
+        <i class="fas fa-heart" style="color:#ff4f4f" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+    <div class="dropdown-content">
+      <div style="text-align:center" class="dropdown-item">
+        <strong> --ATTENDING--</strong>
+      </div>
+
+      <% @user.events.each do |event| %>
+      <%= link_to user_event_path(user_id: @user.id, event_id: event.id) do %>
+        <hr class="dropdown-divider">
+        <div style="text-align:center" class="dropdown-item-hover-color">
+        <%= event.name %>
+        </div>
+      <% end %>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+        <!--<div class="social">
+            <ul>
+                <li><a href="https://twitter.com/fbnlsr"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="mailto:hello@primative.net"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </div>-->
+    </div>
+
+</div>
+
+</main>
+
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script defer src='https://d33wubrfki0l68.cloudfront.net/js/d49ac21445122720d76b0cc2593956d54ecafee1/js/main.min.js'></script>
+
+</body>
+</html>
